@@ -1,0 +1,34 @@
+{% extends 'main/layout.html' %}
+
+
+{% block title %}
+    book list
+{% endblock %}
+
+
+{% block main-content %}
+    <h1> Welcome to book details </h1>
+    <table class="table">
+    <thead>
+        <tr>
+            <td> ID </td>
+            <td> Name </td>
+            <td> Author </td>
+            <td> Description </td>
+            <td> Prices </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr {% if task_priority > 3 %} style="color:red" {% else %} style="color:green" {% endif %} >
+            <td>{{ book_list.id }} </td>
+            <td>{{ book_list.name }} </td>
+            <td> {{ book_list.author }}</td>
+            <td> {{ book_list.price }} </td>
+            <td> {{ book_list.description | truncatewords:3 | title }} </td>
+        </tr>
+    </tbody>
+
+    </table>
+
+
+{% endblock %}
