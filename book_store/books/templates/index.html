@@ -5,10 +5,14 @@
     book list
 {% endblock %}
 
+{% block main-content%}
 
-{% block main-content %}
-    <h1> Welcome to book details </h1>
-    <table class="table">
+
+<h1> Welcome to bookstore </h1>
+
+<h3>book list</h3>
+
+<table class="table">
     <thead>
         <tr>
             <td> ID </td>
@@ -16,19 +20,32 @@
             <td> Author </td>
             <td> Description </td>
             <td> Prices </td>
-        </tr>
+            <td> Actions </td>
+
+
+        </tr>   
     </thead>
     <tbody>
-        <tr {% if task_priority > 3 %} style="color:red" {% else %} style="color:green" {% endif %} >
-            <td>{{ book_list.id }} </td>
-            <td>{{ book_list.name }} </td>
-            <td> {{ book_list.author }}</td>
-            <td> {{ book_list.price }} </td>
-            <td> {{ book_list.description | truncatewords:3 | title }} </td>
+        {% for book in book_list %}
+        <tr {% if book.price > 200 %} style="color:red" {% else %} style="color:green" {% endif %} >
+            <td>{{ book.id }} </td>
+            <td>{{ book.name }} </td>
+            <td> {{ book.author }}</td>
+            <td> {{ book.price }} </td>
+            <td> {{ book.description | truncatewords:3 | title }} </td>
+            <td> 
+                <a class="btn btn-info" href="{% url 'books:books-show' book.id %}">show</a>
+                <a class="btn btn-info" href="{% url 'books:books-update' book.id %}">update</a>
+                <a class="btn btn-danger" href="{% url 'books:books-delete' book.id %}">delete</a>
+
+            </td>
+
+
         </tr>
+        {% endfor %}
+
     </tbody>
 
-    </table>
-
+</table>
 
 {% endblock %}
