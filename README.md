@@ -4,21 +4,21 @@ how to make book_store works:
 
 2- Clone this repo in this directory
 
-3- Create Virtual Enironment
+3- Create Virtual Environment
 
    for windows:
    
-   py -m venv envirnment
+   py -m venv environment
    
 4- Activate it
 
    for windows:
    
-   envirnment\Scripts\activate.bat
+   environment\Scripts\activate.bat
    
    - You will find in cmd something like this
    
-   (envirnment)C:\Users\DELL\Desktop\django_labs>
+   (environment)C:\Users\DELL\Desktop\django_labs>
    
 5- install django
 
