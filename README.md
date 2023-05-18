@@ -1,8 +1,8 @@
 how to make book_store works:
 
-1- Create new Folder , I named it django_labs 
+1- Clone this repo in this directory
 
-2- Clone this repo in this directory
+2- cd django
 
 3- Create Virtual Environment
 
