@@ -1,6 +1,6 @@
 how to make book_store works:
 
-1- Clone this repo in this directory
+1- Clone this repo 
 
 2- cd django
 
