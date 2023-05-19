@@ -9,33 +9,34 @@
 
 
 <h1> Welcome to bookstore </h1>
-
+<div class="d-flex justify-content-center align-items-center">
+<a class="btn btn-success" style="  display: flex;justify-content: center;align-items: center;" href="{% url 'books:books-create' %}"> Create</a>
+</div>
 <h3>book list</h3>
 
 <table class="table">
     <thead>
         <tr>
             <td> ID </td>
-            <td> Name </td>
-            <td> Author </td>
+            <td> title </td>
             <td> Description </td>
-            <td> Prices </td>
-            <td> Actions </td>
+            <td> rate </td>
+            <td> views </td>
 
 
         </tr>   
     </thead>
     <tbody>
         {% for book in book_list %}
-        <tr {% if book.price > 200 %} style="color:red" {% else %} style="color:green" {% endif %} >
+        <tr style="color:green" >
             <td>{{ book.id }} </td>
-            <td>{{ book.name }} </td>
-            <td> {{ book.author }}</td>
-            <td> {{ book.price }} </td>
+            <td>{{ book.title }} </td>
             <td> {{ book.description | truncatewords:3 | title }} </td>
+            <td> {{ book.rate }} </td>
+            <td> {{ book.views }} </td>
             <td> 
                 <a class="btn btn-info" href="{% url 'books:books-show' book.id %}">show</a>
-                <a class="btn btn-info" href="{% url 'books:books-update' book.id %}">update</a>
+                <a class="btn btn-info" href="{% url 'books:update' book.id %}">update</a>
                 <a class="btn btn-danger" href="{% url 'books:books-delete' book.id %}">delete</a>
 
             </td>

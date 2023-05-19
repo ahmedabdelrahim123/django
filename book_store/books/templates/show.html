@@ -12,19 +12,19 @@
     <thead>
         <tr>
             <td> ID </td>
-            <td> Name </td>
-            <td> Author </td>
+            <td> title </td>
             <td> Description </td>
-            <td> Prices </td>
+            <td> rate </td>
+            <td> views </td>
         </tr>
     </thead>
     <tbody>
-        <tr {% if task_priority > 3 %} style="color:red" {% else %} style="color:green" {% endif %} >
+        <tr style="color:green" >
             <td>{{ book.id }} </td>
-            <td>{{ book.name }} </td>
-            <td> {{ book.author }}</td>
-            <td> {{ book.price }} </td>
+            <td>{{ book.title }} </td>
             <td> {{ book.description | truncatewords:3 | title }} </td>
+            <td> {{ book.rate }} </td>
+            <td> {{ book.views }} </td>
         </tr>
     </tbody>
 

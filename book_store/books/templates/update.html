@@ -1,0 +1,34 @@
+
+{% extends 'main/layout.html' %}
+
+
+{%block title%}
+create book
+{%endblock%}
+
+
+{%block main-content%}
+<h2>update book</h2>
+<form method="post" >
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">title</label>
+      <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ book.title }}">
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">description</label>
+        <input type="text" class="form-control" name="description" id="exampleInputPassword1" value="{{ book.description }}">
+      </div>
+
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">rate</label>
+      <input type="text" class="form-control" name="rate" id="exampleInputPassword1"value="{{ book.rate }}">
+    </div>  
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">views</label>
+        <input type="text" class="form-control" name="views" id="exampleInputPassword1" value="{{ book.views }}">
+      </div>  
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+{%endblock%}
