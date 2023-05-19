@@ -28,7 +28,30 @@ how to make book_store works:
 
    - cd book_store
    
-7- Now it's time to run the project
+7- Install the mysqlclient package:
+
+   - pip install mysqlclient
+
+8- create database in phpmyadmin called "mydatabase"
+
+9- change phpmyadmin details in settings.py to yours
+  
+  DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydatabase',
+        'USER': 'myuser',
+        'PASSWORD': 'mypassword',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
+10- python manage.py makemigrations
+
+11- python manage.py migrate
+   
+12- Now it's time to run the project
 
   - py manage.py runserver
   
