@@ -1,6 +1,6 @@
 how to make book_store works:
 
-1- Clone this repo 
+1- Clone this repo (clone it in htdocs and start apache and MySQL )
 
 2- cd django
 
